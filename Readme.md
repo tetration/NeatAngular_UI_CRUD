@@ -12,3 +12,9 @@ To check which version of angular you currently have installed type:
 To run your app type the following commands below:
 	cd my-app
 	ng serve --open
+
+To instal json server in our project you need to type the following command inside the my-app folder:
+npm install -g json-server
+
+To run the json-server type on my-app folder: 
+	json-server --watch mocks/db.json
