@@ -11,5 +11,9 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  logout() {
+      console.log("user logged out");
+      localStorage.removeItem('token');
+      location.reload();
+    }
 }

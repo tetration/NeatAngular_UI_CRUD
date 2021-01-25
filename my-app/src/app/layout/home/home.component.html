@@ -1,6 +1,7 @@
 <header>
     <nav class="navbar fixed-top navbar-dark bg-primary">
         <a class="navbar-brand" [routerLink]="['/']">NeatAngular CRUD</a>
+        <a class="navbar-brand" [routerLink]="['/']"><button type="button" class="btn btn-dark" (click)="logout()">Logout</button></a>
     </nav>
 </header>
 <section>
@@ -8,6 +9,3 @@
         <router-outlet></router-outlet>
     </main>
 </section>
-<footer class="mt-2 p-2 text-center">
-    <p>Neat Angular App de Rafael Todos os Direitos Reservados 2021</p>
-</footer>
