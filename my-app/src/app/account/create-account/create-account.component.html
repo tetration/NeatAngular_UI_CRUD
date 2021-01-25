@@ -1,17 +1,24 @@
 <h2 class="text-center">Criar minha conta</h2>
 
-<form (ngSubmit)="onSubmit()" #form="ngForm">
-  <div class="form-group">
-    <label>Nome</label>
-    <input class="form-control" type="text" name="email" id="email" [(ngModel)]="account.name" required />
+<div class="container custom-container">
+    <div class="col-md-12">
+      <h3 class="mb-3 text-center">Create Employee</h3>
+  
+      <div class="form-group">
+        <input type="text" [(ngModel)]="accountDetails.name" class="form-control" placeholder="Name" required>
+      </div>
+  
+      <div class="form-group">
+        <input type="text" [(ngModel)]="accountDetails.email" class="form-control" placeholder="Email" required>
+      </div>
+  
+      <div class="form-group">
+        <input type="password" [(ngModel)]="accountDetails.password" class="form-control" placeholder="password" required>
+      </div>
+  
+      <div class="form-group">
+        <button class="btn btn-success btn-lg btn-block" (click)="addAccount(accountDetails)">Criar Conta</button>
+      </div>
+      <button class="btn btn-warning btn-lg btn-block" (click)="goBack()">Voltar</button>
+    </div>
   </div>
-  <div class="form-group">
-    <label>E-mail</label>
-    <input class="form-control" type="email" name="email" id="email" [(ngModel)]="account.email" required />
-  </div>
-  <div class="form-group">
-    <label>Senha</label>
-    <input class="form-control" type="password" name="password" id="password" [(ngModel)]="account.password" required />
-  </div>
-  <button type="submit" class="btn btn-primary btn-block" [disabled]="form.form.invalid">Criar minha conta</button>
-</form>

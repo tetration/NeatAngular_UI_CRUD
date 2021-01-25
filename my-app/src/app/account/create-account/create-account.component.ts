@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-
+import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { RestApiService } from "../../shared/rest-api.service";
 @Component({
   selector: 'app-create-account',
   templateUrl: './create-account.component.html',
@@ -7,17 +8,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CreateAccountComponent implements OnInit {
 
-  account = {
-    name: '',
-    email: '',
-    password: ''
-  };
-  constructor() { }
+  @Input() accountDetails = {name: '', email: '', password: ''}
+  constructor(
+    public restApi: RestApiService, 
+    public router: Router,
+  ) { }
 
   ngOnInit(): void {
   }
-  onSubmit(){
-    
+  
+  addAccount(dataAccount) {
+    this.restApi.createAccount(this.accountDetails).subscribe((data: {}) => {
+      this.router.navigate(['/login'])
+    })
   }
-
+  goBack() {
+      this.router.navigate(['/login']);
+  }
 }
+

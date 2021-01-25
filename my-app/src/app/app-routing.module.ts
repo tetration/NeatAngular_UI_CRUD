@@ -5,7 +5,6 @@ import { AuthenticationComponent } from './layout/authentication/authentication.
 import { HomeComponent } from './layout/home/home.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { FormsModule }   from '@angular/forms';
 //import {TaskFormComponent} from './tasks/task-form/task-form.component';
 //import
 
@@ -26,10 +25,11 @@ const routes: Routes = [
     component: AuthenticationComponent,
     children: [
       {path: '', redirectTo: 'login', pathMatch: 'full'},
-      {path: 'login', component: LoginComponent},
+      {path: 'login', component: LoginComponent },
       {path: 'create-account', component: CreateAccountComponent}
     ]
-  }
+  },
+  { path: '**', redirectTo: '' }
 ];
 
 @NgModule({

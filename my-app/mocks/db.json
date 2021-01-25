@@ -1,9 +1,9 @@
 {
-    "user":[
-        {
-            "id": 0,
-            "username": "concert",
-            "password": "prova"
-        }
-    ]
+  "accounts": [
+    {
+      "id": 0,
+      "username": "concert",
+      "password": "prova"
+    }
+  ]
 }
