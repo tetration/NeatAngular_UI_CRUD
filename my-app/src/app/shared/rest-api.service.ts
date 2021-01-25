@@ -42,7 +42,17 @@ export class RestApiService {
         catchError(this.handleError)
       )
     }
-  // HttpClient API get() method => Fetch employee
+
+  // HttpClient API get() method => Fetch account
+  getEmployee(id): Observable<Account> {
+    return this.http.get<Account>(this.apiURL + '/account/' + id)
+    .pipe(
+      retry(1),
+      catchError(this.handleError)
+    )
+  }  
+
+  // HttpClient API get() method => Fetch account
   getAccountByNameAndPass(name, password): Observable<Account> {
     return this.http.get<Account>(this.apiURL + '/accounts/' + name + password)
     .pipe(

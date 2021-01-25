@@ -1,7 +1,16 @@
 <header>
     <nav class="navbar fixed-top navbar-dark bg-primary">
-        <a class="navbar-brand" [routerLink]="['/']">NeatAngular CRUD</a>
-        <a class="navbar-brand" [routerLink]="['/']"><button type="button" class="btn btn-dark" (click)="logout()">Logout</button></a>
+
+        <ul>
+            <a class="navbar-brand" [routerLink]="['/']">NeatAngular CRUD</a>
+            <li><a href=#>Home</a></li>
+            <li><a href=#>About</a></li>
+            <li><a href=#>Portfolio</a></li>
+            <li><a href=#>Services</a></li>
+            <li><a href=#>Contact</a></li>
+            <a class="navbar-brand" [routerLink]="['/']"><button type="button" class="btn btn-dark" (click)="logout()">Logout</button></a>
+            <a href="#" id="menu-icon"></a>
+          </ul>
     </nav>
 </header>
 <section>
