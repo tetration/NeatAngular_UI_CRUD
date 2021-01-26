@@ -18,6 +18,8 @@
               <th scope="col">Name</th>
               <th scope="col">Email</th>
               <th scope="col">Phone</th>
+              <th scope="col">Cadastrado</th>
+              <th scope="col">Modificado</th>
               <th scope="col">Action</th>
             </tr>
           </thead>
@@ -27,6 +29,8 @@
               <td>{{employee.name}}</td>
               <td>{{employee.email}}</td>
               <td>{{employee.phone}}</td>
+              <td>{{employee.created}}</td>
+              <td>{{employee.modified}}</td>
               <td>
                 <span class="edit" routerLink="/employee-edit/{{employee.id}}">Edit</span>
                 <span class="delete" (click)="deleteEmployee(employee.id)">Delete</span>

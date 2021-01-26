@@ -24,6 +24,7 @@ export class EmployeeEditComponent implements OnInit {
   ngOnInit() { 
     this.restApi.getEmployee(this.id).subscribe((data: {}) => {
       this.employeeData = data;
+      this.employeeData.modified = new Date();
     })
   }
 

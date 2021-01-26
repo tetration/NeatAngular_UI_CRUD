@@ -9,7 +9,7 @@ import { NotificationService } from '../notification.service';
 })
 export class EmployeeCreateComponent implements OnInit {
 
-  @Input() employeeDetails = { name: '', email: '', phone: 0 }
+  @Input() employeeDetails = { name: '', email: '', phone: 0, created:null, modified:null }
 
   constructor(
     public restApi: RestApiService, 
@@ -20,6 +20,9 @@ export class EmployeeCreateComponent implements OnInit {
   ngOnInit() { }
 
   addEmployee() {
+    this.employeeDetails.created=new Date();
+    this.employeeDetails.modified=new Date();
+
     this.restApi.createEmployee(this.employeeDetails).subscribe((data: {}) => {
       this.showToasterSuccess(`Cadastrado com êxito`,`Funcionário: ${this.employeeDetails.name}` );
       this.router.navigate(['/employee-list'])
