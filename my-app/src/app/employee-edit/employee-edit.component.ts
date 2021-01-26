@@ -37,6 +37,13 @@ export class EmployeeEditComponent implements OnInit {
       })
     }
   }
+  toggleEditable(event) {
+    if ( event.target.checked ) {
+      this.employeeData.internship= "Sim";
+    }else{
+      this.employeeData.internship= "Não";
+    }
+  }
 
   showToasterWarning(t,m){
     this.notifyService.showWarning(t,m);

@@ -5,4 +5,5 @@ export class Employee {
     phone: number;
     created: Date;
     modified: Date;
+    internship: string;
  }
