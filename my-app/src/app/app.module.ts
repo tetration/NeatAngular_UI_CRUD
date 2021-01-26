@@ -13,6 +13,7 @@ import { AuthenticationComponent } from './layout/authentication/authentication.
 
 import { CommonModule } from '@angular/common';
 import { FormsModule }   from '@angular/forms';
+import {SidebarModule} from 'ng-sidebar';
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import { FormsModule }   from '@angular/forms';
     BrowserModule,
     AppRoutingModule,
     CommonModule,
-    FormsModule 
+    FormsModule ,
+    SidebarModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

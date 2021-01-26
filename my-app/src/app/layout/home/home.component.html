@@ -1,20 +1,29 @@
 <header>
-    <nav class="navbar fixed-top navbar-dark bg-primary">
+    <ng-sidebar-container>
+        <ng-sidebar [opened]="opened">
+            <!--- Sidebar  Content-->
+            <p>Menu Lateral de Navegação</p>
+            <button (click)="toggleSidebar()"> Fechar Menu Lateral</button>
+            <ul class="menu">
+                <li> <a routerLink="/">Principal</a></li>
+                <li> <a routerLink="/"><button type="button" class="btn btn-primary">Lista de Empregados</button></a></li>
+                <li> <a href=""><button type="button" class="btn btn-dark" (click)="logout()">Sair</button></a></li>
+            </ul>
+        </ng-sidebar>
+        <div ng-sidebar-content>
+            <!-- Page Header-->
+            <button class="btn btn-primary active" (click)="toggleSidebar()">
+                Abrir Menu Lateral
+            </button>
+            <!-- Page Body -->
+            <router-outlet></router-outlet>
+        </div>
+    </ng-sidebar-container>
 
-        <ul>
-            <a class="navbar-brand" [routerLink]="['/']">NeatAngular CRUD</a>
-            <li><a href=#>Home</a></li>
-            <li><a href=#>About</a></li>
-            <li><a href=#>Portfolio</a></li>
-            <li><a href=#>Services</a></li>
-            <li><a href=#>Contact</a></li>
-            <a class="navbar-brand" [routerLink]="['/']"><button type="button" class="btn btn-dark" (click)="logout()">Logout</button></a>
-            <a href="#" id="menu-icon"></a>
-          </ul>
-    </nav>
+
+
 </header>
 <section>
     <main class="container">
-        <router-outlet></router-outlet>
     </main>
 </section>
