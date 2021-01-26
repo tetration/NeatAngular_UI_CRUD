@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { RestApiService } from "../shared/rest-api.service";
-
+import { NotificationService } from '../notification.service';
 @Component({
   selector: 'app-employee-list',
   templateUrl: './employee-list.component.html',
@@ -11,7 +11,8 @@ export class EmployeeListComponent implements OnInit {
   Employee: any = [];
 
   constructor(
-    public restApi: RestApiService
+    public restApi: RestApiService,
+    private notifyService : NotificationService
   ) { }
 
   ngOnInit() {
@@ -30,8 +31,13 @@ export class EmployeeListComponent implements OnInit {
     if (window.confirm('Are you sure, you want to delete?')){
       this.restApi.deleteEmployee(id).subscribe(data => {
         this.loadEmployees()
+        this.showToasterInfo(`Deletado com êxito`,`Funcionário deletado do banco` );
       })
     }
   }  
+
+  showToasterInfo(t,m){
+    this.notifyService.showInfo(t, m)
+}
 
 }

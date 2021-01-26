@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { FormsModule }   from '@angular/forms';
 import {RestApiService} from '../../shared/rest-api.service'
+import { NotificationService } from '../../notification.service'
 
 @Component({
   selector: 'app-login',
@@ -22,7 +23,8 @@ export class LoginComponent implements OnInit {
   constructor(
     private accountService: AccountService,
     private router: Router,
-    public restApi: RestApiService
+    public restApi: RestApiService,
+    private notifyService : NotificationService
   ) { }
 
   ngOnInit(): void {
@@ -37,6 +39,7 @@ export class LoginComponent implements OnInit {
       tf=this.checkCredentials(credentials);
       const result = await this.accountService.login(this.login);
       console.log(`Login efetivado com sucesso: ${result}`);
+      this.showToasterSuccess(`Login efetivado com sucesso:`, `${result}`);
       if(tf==true){
 
       }else{
@@ -79,4 +82,7 @@ export class LoginComponent implements OnInit {
     }
     return tf
   }
+  showToasterSuccess(t,m){
+    this.notifyService.showSuccess(t, m)
+}
 }

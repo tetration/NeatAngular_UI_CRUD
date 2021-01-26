@@ -18,7 +18,7 @@ import {SidebarModule} from 'ng-sidebar';
 import { EmployeeCreateComponent } from './employee-create/employee-create.component';
 import { EmployeeEditComponent } from './employee-edit/employee-edit.component';
 import { EmployeeListComponent } from './employee-list/employee-list.component';
-
+import { ToastrModule } from 'ngx-toastr';
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,7 +37,8 @@ import { EmployeeListComponent } from './employee-list/employee-list.component';
     AppRoutingModule,
     CommonModule,
     FormsModule ,
-    SidebarModule.forRoot()
+    SidebarModule.forRoot(),
+    ToastrModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
