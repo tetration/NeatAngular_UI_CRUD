@@ -15,6 +15,9 @@ import { CommonModule } from '@angular/common';
 import { FormsModule }   from '@angular/forms';
 import {SidebarModule} from 'ng-sidebar';
 
+import { EmployeeCreateComponent } from './employee-create/employee-create.component';
+import { EmployeeEditComponent } from './employee-edit/employee-edit.component';
+import { EmployeeListComponent } from './employee-list/employee-list.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +27,9 @@ import {SidebarModule} from 'ng-sidebar';
     CreateAccountComponent,
     HomeComponent,
     AuthenticationComponent,
+    EmployeeCreateComponent,
+    EmployeeEditComponent,
+    EmployeeListComponent,
   ],
   imports: [
     HttpClientModule,

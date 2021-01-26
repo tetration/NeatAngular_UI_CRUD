@@ -5,8 +5,8 @@
             <p>Menu Lateral de Navegação</p>
             <button (click)="toggleSidebar()"> Fechar Menu Lateral</button>
             <ul class="menu">
-                <li> <a routerLink="/">Principal</a></li>
-                <li> <a routerLink="/"><button type="button" class="btn btn-primary">Lista de Empregados</button></a></li>
+                <li> <a routerLink="/create-employee"><button type="button" class="btn btn-success">Cadastrar Funcionário</button></a></li>
+                <li> <a routerLink="/employees-list"><button type="button" class="btn btn-primary">Lista de Funcionários</button></a></li>
                 <li> <a href=""><button type="button" class="btn btn-dark" (click)="logout()">Sair</button></a></li>
             </ul>
         </ng-sidebar>

@@ -4,6 +4,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 //import { Employee } from '../shared/employee';
 import { Observable, throwError } from 'rxjs';
 import { retry, catchError } from 'rxjs/operators';
+import { Employee } from './employee';
 
 @Injectable({
   providedIn: 'root'
@@ -44,7 +45,7 @@ export class RestApiService {
     }
 
   // HttpClient API get() method => Fetch account
-  getEmployee(id): Observable<Account> {
+  getAccount(id): Observable<Account> {
     return this.http.get<Account>(this.apiURL + '/account/' + id)
     .pipe(
       retry(1),
@@ -61,7 +62,7 @@ export class RestApiService {
     )
   }    
 
-  /*
+
   // HttpClient API get() method => Fetch employees list
   getEmployees(): Observable<Employee> {
     return this.http.get<Employee>(this.apiURL + '/employees')
@@ -106,7 +107,7 @@ export class RestApiService {
       catchError(this.handleError)
     )
   }
-*/
+
   // Error handling 
   handleError(error) {
      let errorMessage = '';
